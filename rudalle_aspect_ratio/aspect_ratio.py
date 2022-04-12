@@ -12,7 +12,7 @@ from einops import rearrange
 from .image_prompts import BatchImagePrompts
 
 
-class RuDalleAspectRation:
+class RuDalleAspectRatio:
 
     def __init__(self, dalle, vae, tokenizer, aspect_ratio=1.0, window=128, image_size=256, bs=4,
                  device='cuda', quite=False):
