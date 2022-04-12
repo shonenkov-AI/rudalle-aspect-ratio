@@ -13,6 +13,7 @@ git clone https://github.com/shonenkov-AI/rudalle-aspect-ratio
 
 ### Quick Start
 
+Horizontal images:
 ```python3
 import sys
 sys.path.insert(0, './rudalle-aspect-ratio')
@@ -32,6 +33,7 @@ show(result_pil_images, 4)
 ```
 ![](./pics/h_example.jpg)
 
+Vertical images:
 ```python3
 rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
