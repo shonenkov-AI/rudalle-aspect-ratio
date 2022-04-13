@@ -1,4 +1,4 @@
-[[Paper]]() [[Colab]]() [[Kaggle]]() [[Model Card]]()
+[[Paper]](https://drive.google.com/file/d/1bN1pa6h9QO_po8VKSScNxAeWzV_nl_6W/view) [[Colab]]() [[Kaggle]]() [[Model Card]](https://huggingface.co/shonenkov-AI/rudalle-xl-surrealist)
 
 ruDALLE aspect ratio images
 ---
@@ -45,14 +45,13 @@ show(result_pil_images, 4)
 
 ![](./pics/w_example.jpg)
 
-
-# Author:
+### Citation:
 ```
-@misc{shonenkov2022rudalle_aspect_ration,
-      title={ruDALLE aspect ratio images: technical report},
-      author={Alex Shonenkov},
-      year={2022},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@MISC{rudalle_ar_github,
+    author  = {Alex Shonenkov},
+    title   = {Github ruDALLE aspect ratio images by shonenkovAI},
+    url     = {https://github.com/shonenkov-AI/rudalle-aspect-ratio},
+    year    = 2022,
+    note    = {Accessed: 13-04-2022}
 }
 ```
