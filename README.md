@@ -2,7 +2,7 @@
 
 ruDALLE aspect ratio images
 ---
-Use any custom aspect ratio for image generation by ruDALLE Malevich XL
+Generate any arbitrary aspect ratio image using the ruDALLE models
 
 ### Installing
 
