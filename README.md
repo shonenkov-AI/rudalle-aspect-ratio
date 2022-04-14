@@ -32,7 +32,7 @@ rudalle_ar = RuDalleAspectRatio(
     aspect_ratio=32/9, bs=4, device=device
 )
 _, result_pil_images = rudalle_ar.generate_images('готический квартал', 1024, 0.975, 4)
-show(result_pil_images, 4)
+show(result_pil_images, 1)
 ```
 ![](./pics/h_example.jpg)
 
