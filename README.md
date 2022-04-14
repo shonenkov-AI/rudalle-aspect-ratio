@@ -31,7 +31,7 @@ rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
     aspect_ratio=32/9, bs=4, device=device
 )
-_, result_pil_images = rudalle_ar.generate_images('готический квартал', 2048, 0.975, 4)
+_, result_pil_images = rudalle_ar.generate_images('готический квартал', 1024, 0.975, 4)
 show(result_pil_images, 4)
 ```
 ![](./pics/h_example.jpg)
@@ -42,7 +42,7 @@ rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
     aspect_ratio=9/32, bs=4, device=device
 )
-_, result_pil_images = rudalle_ar.generate_images('голубой цветок', 2048, 0.975, 4)
+_, result_pil_images = rudalle_ar.generate_images('голубой цветок', 512, 0.975, 4)
 show(result_pil_images, 4)
 ```
 
