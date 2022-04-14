@@ -1,4 +1,7 @@
-[[Paper]](https://drive.google.com/file/d/1bN1pa6h9QO_po8VKSScNxAeWzV_nl_6W/view) [[Colab]]() [[Kaggle]]() [[Model Card]](https://huggingface.co/shonenkov-AI/rudalle-xl-surrealist)
+[[Paper]](https://drive.google.com/file/d/1bN1pa6h9QO_po8VKSScNxAeWzV_nl_6W/view) 
+[[Colab]](https://colab.research.google.com/drive/124zC1w2qHR1ijfEPQVvLccLRBLD_3duG?usp=sharing) 
+[[Kaggle]]() 
+[[Model Card]](https://huggingface.co/shonenkov-AI/rudalle-xl-surrealist)
 
 ruDALLE aspect ratio images
 ---
