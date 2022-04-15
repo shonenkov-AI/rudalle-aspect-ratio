@@ -46,7 +46,7 @@ _, result_pil_images = rudalle_ar.generate_images('голубой цветок',
 show(result_pil_images, 4)
 ```
 
-![](./pics/w_example.jpg)
+![](./pics/v_example.jpg)
 
 ### Citation:
 ```
