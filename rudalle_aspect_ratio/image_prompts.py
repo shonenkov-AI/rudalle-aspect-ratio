@@ -24,22 +24,23 @@ class BatchImagePrompts:
             vqg_img = torch.zeros((bs, vqg_img_h, vqg_img_w), dtype=torch.int32, device=img.device)
             if borders['down'] != 0:
                 down_border = borders['down'] * 8
-                _, _, [_, _, down_vqg_img] = vae.model.encode(img[:, :, -down_border:, :])
+                _, _, [_, _, down_vqg_img] = vae.model.encode(img[:, :, -down_border:, :], disable_gumbel_softmax=True)
                 vqg_img[:, -borders['down']:, :] = down_vqg_img
             if borders['right'] != 0:
                 right_border = borders['right'] * 8
-                _, _, [_, _, right_vqg_img] = vae.model.encode(img[:, :, :, -right_border:])
+                _, _, [_, _, right_vqg_img] = vae.model.encode(
+                    img[:, :, :, -right_border:], disable_gumbel_softmax=True)
                 vqg_img[:, :, -borders['right']:] = right_vqg_img
             if borders['left'] != 0:
                 left_border = borders['left'] * 8
-                _, _, [_, _, left_vqg_img] = vae.model.encode(img[:, :, :, :left_border])
+                _, _, [_, _, left_vqg_img] = vae.model.encode(img[:, :, :, :left_border], disable_gumbel_softmax=True)
                 vqg_img[:, :, :borders['left']] = left_vqg_img
             if borders['up'] != 0:
                 up_border = borders['up'] * 8
-                _, _, [_, _, up_vqg_img] = vae.model.encode(img[:, :, :up_border, :])
+                _, _, [_, _, up_vqg_img] = vae.model.encode(img[:, :, :up_border, :], disable_gumbel_softmax=True)
                 vqg_img[:, :borders['up'], :] = up_vqg_img
         else:
-            _, _, [_, _, vqg_img] = vae.model.encode(img)
+            _, _, [_, _, vqg_img] = vae.model.encode(img, disable_gumbel_softmax=True)
 
         bs, vqg_img_h, vqg_img_w = vqg_img.shape
         mask = torch.zeros(vqg_img_h, vqg_img_w)
