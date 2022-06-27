@@ -1,1 +1,1 @@
-rudalle==1.0.0
+rudalle==1.1.1

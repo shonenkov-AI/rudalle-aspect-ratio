@@ -86,7 +86,7 @@ class RuDalleAspectRatio:
                     torch.ones((chunk_bs, 1, self.total_seq_length, self.total_seq_length), device=self.device)
                 )
                 out = input_ids.unsqueeze(0).repeat(chunk_bs, 1).to(self.device)
-                has_cache = False
+                cache = {}
                 if image_prompts is not None:
                     prompts_idx, prompts = image_prompts.image_prompts_idx, image_prompts.image_prompts
                 range_out = range(out.shape[1], self.total_seq_length)
@@ -97,8 +97,8 @@ class RuDalleAspectRatio:
                     if image_prompts is not None and idx in prompts_idx:
                         out = torch.cat((out, prompts[:, idx].unsqueeze(1)), dim=-1)
                     else:
-                        logits, has_cache = self.dalle(out, attention_mask,
-                                                       has_cache=has_cache, use_cache=use_cache, return_loss=False)
+                        logits, cache = self.dalle(out, attention_mask,
+                                                   cache=cache, use_cache=use_cache, return_loss=False)
                         logits = logits[:, -1, self.vocab_size:]
                         logits /= temperature
                         filtered_logits = transformers.top_k_top_p_filtering(logits, top_k=top_k, top_p=top_p)
@@ -146,10 +146,10 @@ class RuDalleAspectRatio:
                         full_context[:, self.text_seq_length:][:, -j * self.image_tokens_per_dim:]
                     ), dim=-1)
 
-                    has_cache = False
+                    cache = {}
                     for _ in range(self.image_tokens_per_dim):
-                        logits, has_cache = self.dalle(out, attention_mask,
-                                                       has_cache=has_cache, use_cache=use_cache, return_loss=False)
+                        logits, cache = self.dalle(out, attention_mask,
+                                                   cache=cache, use_cache=use_cache, return_loss=False)
                         logits = logits[:, -1, self.vocab_size:]
                         logits /= temperature
                         filtered_logits = transformers.top_k_top_p_filtering(logits, top_k=top_k, top_p=top_p)

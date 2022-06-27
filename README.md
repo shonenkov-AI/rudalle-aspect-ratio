@@ -10,7 +10,7 @@ Generate any arbitrary aspect ratio images using the ruDALLE models
 ### Installing
 
 ```
-pip install rudalle==1.0.0
+pip install rudalle==1.1.1
 git clone https://github.com/shonenkov-AI/rudalle-aspect-ratio
 ```
 
@@ -31,7 +31,7 @@ rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
     aspect_ratio=32/9, bs=4, device=device
 )
-_, result_pil_images = rudalle_ar.generate_images('готический квартал', 1024, 0.975, 4)
+_, result_pil_images = rudalle_ar.generate_images('готический квартал', 768, 0.99, 4)
 show(result_pil_images, 1)
 ```
 ![](./pics/h_example.jpg)
@@ -42,7 +42,7 @@ rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
     aspect_ratio=9/32, bs=4, device=device
 )
-_, result_pil_images = rudalle_ar.generate_images('голубой цветок', 512, 0.975, 4)
+_, result_pil_images = rudalle_ar.generate_images('голубой цветок', 768, 0.99, 4)
 show(result_pil_images, 4)
 ```
 
